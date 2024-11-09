@@ -1,0 +1,78 @@
+﻿body {
+    background-color: #e0f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #006064;
+}
+
+.login-container {
+    width: 40%;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 150, 136, 0.3);
+    text-align: center;
+}
+
+.logo-container {
+    margin-bottom: 15px;
+}
+
+.logo {
+}
+
+.login-container h3 {
+    font-weight: 700;
+    color: #006064;
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    color: #4db6ac;
+}
+
+.form-control {
+    border: 1px solid #4db6ac;
+    border-radius: 10px;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+}
+
+    .form-control:focus {
+        border-color: #00796b;
+        box-shadow: none;
+    }
+
+.btn-primary {
+    width: 100%;
+    background-color: #00838f;
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 131, 143, 0.3);
+}
+
+    .btn-primary:hover {
+        background-color: #006064;
+    }
+
+.btn-outline-secondary {
+    width: 100%;
+    border: 1px solid #4db6ac;
+    padding: 12px;
+    font-weight: 600;
+    color: #006064;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .btn-outline-secondary:hover {
+        background-color: #e0f2f1;
+        color: #004d40;
+    }
+
+.text-danger {
+    color: #d32f2f;
+}
