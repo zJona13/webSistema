@@ -89,4 +89,52 @@ Public Class wfIngreso
             ' Manejo de error
         End Try
     End Sub
+
+    Protected Sub DgvListado_SelectedIndexChanged(sender As Object, e As EventArgs)
+        ' Obtener el ID de la compra seleccionada
+        Dim idCompra As Integer = Convert.ToInt32(DgvListado.SelectedDataKey.Value)
+
+        ' Llamar al método para mostrar el detalle
+        MostrarDetalle(idCompra)
+
+        ' Hacer visible el panel de detalle
+        PanelMostrarDetalle.Visible = True
+    End Sub
+
+    Private Sub MostrarDetalle(idCompra As Integer)
+        Try
+            ' Obtener los detalles de la compra
+            Dim Neg As New NIngreso()
+            Dim dtDetalle As DataTable = Neg.ListarDetalle(idCompra)
+
+            ' Enlazar los datos al GridView de detalles
+            DgvMostrarDetalle.DataSource = dtDetalle
+            DgvMostrarDetalle.DataBind()
+
+            ' Calcular Subtotal, Impuesto y Total
+            Dim total As Decimal = 0
+            Dim impuesto As Decimal = 0.18 ' Asumiendo que es el 18% como en el código original
+            Dim subtotal As Decimal
+            Dim totalImpuesto As Decimal
+
+            ' Sumar los importes de cada artículo
+            For Each row As DataRow In dtDetalle.Rows
+                total += Convert.ToDecimal(row("importe"))
+            Next
+
+            ' Calcular subtotal y total de impuestos
+            subtotal = Math.Round(total / (1 + impuesto), 2)
+            totalImpuesto = Math.Round(total - subtotal, 2)
+
+            ' Mostrar los valores en los Labels
+            LblSubTotal.Text = subtotal.ToString("C", Globalization.CultureInfo.CreateSpecificCulture("es-PE"))
+            LblTotalImpuesto.Text = totalImpuesto.ToString("C", Globalization.CultureInfo.CreateSpecificCulture("es-PE"))
+            LblTotalGeneral.Text = total.ToString("C", Globalization.CultureInfo.CreateSpecificCulture("es-PE"))
+
+        Catch ex As Exception
+            ' Manejo de error
+            ' Puedes mostrar un mensaje al usuario si es necesario
+        End Try
+    End Sub
+
 End Class

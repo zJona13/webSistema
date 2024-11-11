@@ -176,15 +176,6 @@ Partial Public Class wfIngreso
     Protected WithEvents BtnCancelar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control BtnVerDetalle.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents BtnVerDetalle As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''Control BtnAnular.
     '''</summary>
     '''<remarks>
@@ -219,4 +210,49 @@ Partial Public Class wfIngreso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents hfShowModal As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''Control PanelMostrarDetalle.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents PanelMostrarDetalle As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''Control DgvMostrarDetalle.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents DgvMostrarDetalle As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control LblSubTotal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents LblSubTotal As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control LblTotalImpuesto.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents LblTotalImpuesto As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control LblTotalGeneral.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents LblTotalGeneral As Global.System.Web.UI.WebControls.Label
 End Class

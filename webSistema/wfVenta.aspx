@@ -152,8 +152,6 @@
                         </div>
                     </div>
                     <div>
-                        <asp:Button ID="BtnVerDetalle" runat="server" Text="Ver Detalle" CssClass="btn btn-secondary" />
-
                         <asp:Button ID="BtnAnular" runat="server" Text="Anular" CssClass="btn btn-danger" OnClientClick="mostrarConfirmacion('anular'); return false;"/>
                         
                         <asp:HiddenField ID="HiddenFieldAccion" runat="server" />
@@ -162,11 +160,37 @@
                         <asp:GridView ID="DgvListado" runat="server" AutoGenerateSelectButton="True" DataKeyNames="ID"
                                 AlternatingRowStyle-BackColor="White"
                                 SelectedRowStyle-BackColor="#669999"
-                                SelectedRowStyle-ForeColor="White">
+                                SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="DgvListado_SelectedIndexChanged">
                                 <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
                             <SelectedRowStyle BackColor="#669999" ForeColor="White"></SelectedRowStyle>
                         </asp:GridView>
                         <asp:HiddenField ID="hfShowModal" runat="server" Value="False" />
+
+                        <asp:Panel ID="PanelMostrarDetalle" runat="server" Visible="False" CssClass="p-3">
+                            <div class="form-group">
+                                <h3>Detalles de la venta</h3>
+                                <asp:GridView ID="DgvMostrarDetalle" runat="server" AutoGenerateColumns="False">
+                                    <Columns>
+                                        <asp:BoundField DataField="codigo" HeaderText="Código" />
+                                        <asp:BoundField DataField="articulo" HeaderText="Artículo" />
+                                        <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
+                                        <asp:BoundField DataField="precio" HeaderText="Precio" />
+                                        <asp:BoundField DataField="importe" HeaderText="Importe" />
+                                    </Columns>
+                                </asp:GridView>
+
+                                <!-- Subtotal, Impuesto y Total -->
+                                <div class="form-group mt-3">
+                                    <label>Sub Total:</label>
+                                    <asp:Label ID="LblSubTotal" runat="server" CssClass="form-control" />
+                                    <label>Total Impuesto:</label>
+                                    <asp:Label ID="LblTotalImpuesto" runat="server" CssClass="form-control" />
+                                    <label>Total General:</label>
+                                    <asp:Label ID="LblTotalGeneral" runat="server" CssClass="form-control" />
+                                </div>
+                            </div>
+                        </asp:Panel>
+
                     </div>                      
                  </div>
              </div>    
