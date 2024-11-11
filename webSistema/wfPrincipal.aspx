@@ -10,6 +10,12 @@
     <title>MENU PRINCIPAL</title>
 </head>
 <body>
+         <header>
+            <div class="header-content">
+                <img src="images/final.PNG" alt="Logo" class="logo" />
+               <h2 id="header-title">Sistema compra y ventas - Web</h2>
+            </div>
+        </header>
     <form id="form1" runat="server">
         <div class="wrapper">
             <%--Sidebar--%>

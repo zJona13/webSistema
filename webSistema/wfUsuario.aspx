@@ -78,7 +78,7 @@
             <%--Información--%>
              <div class="content" style="height: 0px;">
                  <div class="container-fluid">
-                     <div>
+                    <div>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                          Agregar
@@ -157,25 +157,26 @@
                                 </div>
                                 </div>
                             </div>
-                        </div>
+                    </div>
                  </div>
-                     <div>
-                        <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClientClick="mostrarConfirmacion('eliminar'); return false;"/>
-                        <asp:Button ID="BtnActivar" runat="server" Text="Activar" CssClass="btn btn-success" OnClientClick="mostrarConfirmacion('activar'); return false;"/>
-                        <asp:Button ID="BtnDesactivar" runat="server" Text="Desactivar" CssClass="btn btn-warning" OnClientClick="mostrarConfirmacion('desactivar'); return false;"/>
-                        <asp:HiddenField ID="HiddenFieldAccion" runat="server" />
-                     </div>
-                     <div>
-                        <asp:GridView ID="DgvListado" runat="server" AutoGenerateSelectButton="true" AutoGenerateEditButton="true" DataKeyNames="ID"
+                <div>
+                    <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClientClick="mostrarConfirmacion('eliminar'); return false;"/>
+                    <asp:Button ID="BtnActivar" runat="server" Text="Activar" CssClass="btn btn-success" OnClientClick="mostrarConfirmacion('activar'); return false;"/>
+                    <asp:Button ID="BtnDesactivar" runat="server" Text="Desactivar" CssClass="btn btn-warning" OnClientClick="mostrarConfirmacion('desactivar'); return false;"/>
+                    <asp:HiddenField ID="HiddenFieldAccion" runat="server" />
+                </div>
+                <div>
+                    <asp:GridView ID="DgvListado" runat="server" AutoGenerateSelectButton="true" AutoGenerateEditButton="true" DataKeyNames="ID"
                             AlternatingRowStyle-BackColor="White"
                             SelectedRowStyle-BackColor="#669999"
                             SelectedRowStyle-ForeColor="White">
-                        </asp:GridView>
-                         <asp:HiddenField ID="hfShowModal" runat="server" Value="False" />
-                     </div>   
+                    </asp:GridView>
+                    <asp:HiddenField ID="hfShowModal" runat="server" Value="False" />
+                </div>   
              </div>
         </div>   
     </form>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
     function mostrarConfirmacion(accion) {

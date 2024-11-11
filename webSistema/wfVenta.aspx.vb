@@ -70,4 +70,31 @@ Public Class wfVenta
             row.Cells(7).Enabled = False
         Next
     End Sub
+
+    Protected Sub ConfirmarAccion(sender As Object, e As EventArgs)
+        Dim accion As String = HiddenFieldAccion.Value
+        Dim id As Integer = Convert.ToInt32(DgvListado.SelectedDataKey.Value)
+        Dim Neg As New NVenta()
+
+        Try
+            Select Case accion
+                Case "anular"
+                    Neg.Anular(id)
+            End Select
+            Listar() ' Actualiza la lista después de la acción
+        Catch ex As Exception
+            ' Manejo de error
+        End Try
+    End Sub
+
+    Protected Sub BtnAnular_Click(sender As Object, e As EventArgs) Handles BtnAnular.Click
+        Try
+            Dim Neg As New NVenta()
+            Dim idventa As Integer = Convert.ToInt32(DgvListado.SelectedDataKey.Value)
+            Neg.Anular(idventa)
+            Listar() ' Actualizar la lista después de desactivar
+        Catch ex As Exception
+            ' Manejo de error
+        End Try
+    End Sub
 End Class

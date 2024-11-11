@@ -80,7 +80,7 @@
                     <div>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                         Mantenimiento
+                         Agregar
                         </button>
 
                         <!-- Modal -->
@@ -152,17 +152,43 @@
                         </div>
                     </div>
                     <div>
-                        <asp:GridView ID="DgvListado" runat="server">
-                        </asp:GridView>
-                    </div>   
+                        <asp:Button ID="BtnVerDetalle" runat="server" Text="Ver Detalle" CssClass="btn btn-secondary" />
+
+                        <asp:Button ID="BtnAnular" runat="server" Text="Anular" CssClass="btn btn-danger" OnClientClick="mostrarConfirmacion('anular'); return false;"/>
+                        
+                        <asp:HiddenField ID="HiddenFieldAccion" runat="server" />
+                    </div>
                     <div>
-                        <asp:CheckBox ID="ChkSeleccionar" runat="server" Text="Seleccionar" />
-                        <asp:Button ID="BtnAnular" runat="server" Text="Anular" />
-                    </div>                     
+                        <asp:GridView ID="DgvListado" runat="server" AutoGenerateSelectButton="True" DataKeyNames="ID"
+                                AlternatingRowStyle-BackColor="White"
+                                SelectedRowStyle-BackColor="#669999"
+                                SelectedRowStyle-ForeColor="White">
+                                <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
+                            <SelectedRowStyle BackColor="#669999" ForeColor="White"></SelectedRowStyle>
+                        </asp:GridView>
+                        <asp:HiddenField ID="hfShowModal" runat="server" Value="False" />
+                    </div>                      
                  </div>
              </div>    
         </div>
     </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+<script>
+    function mostrarConfirmacion(accion) {
+        document.getElementById("actionText").innerText = accion;
+        document.getElementById("<%= HiddenFieldAccion.ClientID %>").value = accion;
+        var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+        confirmationModal.show();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var showModal = document.getElementById('<%= hfShowModal.ClientID %>').value;
+        if (showModal === "True") {
+            var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            exampleModal.show();
+            document.getElementById('<%= hfShowModal.ClientID %>').value = "False";
+        }
+    });
+</script>
 </html>

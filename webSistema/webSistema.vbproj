@@ -106,6 +106,7 @@
   <ItemGroup>
     <Content Include="CSS\login.css" />
     <Content Include="CSS\master.css" />
+    <Content Include="images\final.PNG" />
     <Content Include="images\login.png" />
     <Content Include="wfArticulo.aspx" />
     <Content Include="wfCategoria.aspx" />
