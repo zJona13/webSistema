@@ -15,9 +15,7 @@ Public Class wfRol1
             Dim dt As DataTable = Neg.Listar()
             DgvListado.DataSource = dt
             DgvListado.DataBind()
-            LblTotal.Text = "Total Registros: " & dt.Rows.Count.ToString()
         Catch ex As Exception
-            LblTotal.Text = "Error: " & ex.Message
         End Try
     End Sub
 

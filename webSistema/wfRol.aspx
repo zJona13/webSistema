@@ -77,9 +77,6 @@
             <%--Información--%>
              <div class="content" style="height: 0px;">
                  <div class="container-fluid">
-                     <div id="Total">
-                        <asp:Label ID="LblTotal" runat="server" Text="Total Registros: 0"></asp:Label>
-                    </div>
                     <div>
                         <asp:GridView ID="DgvListado" runat="server" AutoGenerateColumns="True" CssClass="table" />
                     </div>

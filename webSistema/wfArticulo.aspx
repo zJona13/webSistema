@@ -80,7 +80,7 @@
                      <div>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                         Mantenimiento
+                         Agregar
                         </button>
 
                         <!-- Modal -->
@@ -89,7 +89,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Artículos</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <asp:Button type="BtnClose" runat="server" CssClass="btn-close" data-bs-dismiss="modal" aria-label="Close" Text="" ID="BtnClose" />
                                     </div>
                                     <div class="modal-body">
 
@@ -131,32 +131,54 @@
                                             <label for="txtimagen">Imagen</label>
                                             <asp:TextBox ID="txtImagen" runat="server" CssClass="form-control"></asp:TextBox>
                                             <asp:Button ID="BtnCargarImagen" runat="server" CssClass="btn btn-secondary" Text="..." />
-                                            <asp:Image ID="PicImagen" runat="server" />
+                                            <asp:Image ID="PicImagen" runat="server" Width="100px" Height="100px" />
                                         </div>
 
                                     </div>
                                     <div class="modal-footer">
-                                        <asp:Button ID="BtnActualizar" runat="server" CssClass="btn btn-primary" Text="Actualizar" />
-                                        <asp:Button ID="BtnCancelar" runat="server" CssClass="btn btn-secondary" Text="Cancelar" data-bs-dismiss="modal" />
+                                        <asp:Button ID="BtnInsertar" runat="server" CssClass="btn btn-primary" Text="Insertar" Visible="true" />
+                                        <asp:Button ID="BtnActualizar" runat="server" CssClass="btn btn-primary" Text="Actualizar" Visible="false" OnClientClick="mostrarConfirmacion('actualizar'); return false;"/>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                      </div>
                      <div>
-                         <asp:GridView ID="DgvListado" runat="server">
-                         </asp:GridView>
-                     </div>   
-                     <div>
-                         <asp:CheckBox ID="ChkSeleccionar" runat="server" Text="Seleccionar" />
-                         <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" />
-                         <asp:Button ID="BtnActivar" runat="server" Text="Activar" />
-                         <asp:Button ID="BtnDesactivar" runat="server" Text="Desactivar" />
+                        <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClientClick="mostrarConfirmacion('eliminar'); return false;"/>
+                        <asp:Button ID="BtnActivar" runat="server" Text="Activar" CssClass="btn btn-success" OnClientClick="mostrarConfirmacion('activar'); return false;"/>
+                        <asp:Button ID="BtnDesactivar" runat="server" Text="Desactivar" CssClass="btn btn-warning" OnClientClick="mostrarConfirmacion('desactivar'); return false;"/>
+                        <asp:HiddenField ID="HiddenFieldAccion" runat="server" />
                      </div>
+                     <div>
+                        <asp:GridView ID="DgvListado" runat="server" AutoGenerateSelectButton="true" AutoGenerateEditButton="true" DataKeyNames="ID"
+                            AlternatingRowStyle-BackColor="White"
+                            SelectedRowStyle-BackColor="#669999"
+                            SelectedRowStyle-ForeColor="White">
+                        </asp:GridView>
+                        <asp:HiddenField ID="hfShowModal" runat="server" Value="False" />
+                     </div>   
                  </div>
              </div>   
         </div>
     </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    function mostrarConfirmacion(accion) {
+        document.getElementById("actionText").innerText = accion;
+        document.getElementById("<%= HiddenFieldAccion.ClientID %>").value = accion;
+        var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+        confirmationModal.show();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var showModal = document.getElementById('<%= hfShowModal.ClientID %>').value;
+        if (showModal === "True") {
+            var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            exampleModal.show();
+            document.getElementById('<%= hfShowModal.ClientID %>').value = "False";
+        }
+    });
+</script>
 </body>
 </html>
