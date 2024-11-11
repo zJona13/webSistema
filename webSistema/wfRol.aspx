@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="wfPrincipal.aspx.vb" Inherits="webSistema.principal" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="wfRol.aspx.vb" Inherits="webSistema.wfRol1" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <link href="/CSS/master.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>MENU PRINCIPAL</title>
+    <title>ROLES</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -77,7 +77,12 @@
             <%--Información--%>
              <div class="content" style="height: 0px;">
                  <div class="container-fluid">
-                     <p>HOLA MUNDO</p>
+                     <div id="Total">
+                        <asp:Label ID="LblTotal" runat="server" Text="Total Registros: 0"></asp:Label>
+                    </div>
+                    <div>
+                        <asp:GridView ID="DgvListado" runat="server" AutoGenerateColumns="True" CssClass="table" />
+                    </div>
                  </div>
              </div>   
         </div>

@@ -104,33 +104,20 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-grid.rtl.css" />
-    <Content Include="Content\bootstrap-grid.rtl.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
-    <Content Include="Content\bootstrap-reboot.rtl.css" />
-    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
-    <Content Include="Content\bootstrap-utilities.css" />
-    <Content Include="Content\bootstrap-utilities.min.css" />
-    <Content Include="Content\bootstrap-utilities.rtl.css" />
-    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.rtl.css" />
-    <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="CSS\login.css" />
+    <Content Include="CSS\master.css" />
     <Content Include="images\login.png" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
-    <Content Include="Scripts\bootstrap.esm.js" />
-    <Content Include="Scripts\bootstrap.esm.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="wfArticulo.aspx" />
+    <Content Include="wfCategoria.aspx" />
+    <Content Include="wfCliente.aspx" />
+    <Content Include="wfIngreso.aspx" />
     <Content Include="wfPrincipal.aspx" />
     <Content Include="Web.config" />
     <Content Include="wfLogin.aspx" />
+    <Content Include="wfProveedor.aspx" />
+    <Content Include="wfRol.aspx" />
+    <Content Include="wfUsuario.aspx" />
+    <Content Include="wfVenta.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -152,6 +139,34 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="wfArticulo.aspx.designer.vb">
+      <DependentUpon>wfArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfArticulo.aspx.vb">
+      <DependentUpon>wfArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfCategoria.aspx.designer.vb">
+      <DependentUpon>wfCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfCategoria.aspx.vb">
+      <DependentUpon>wfCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfCliente.aspx.designer.vb">
+      <DependentUpon>wfCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfCliente.aspx.vb">
+      <DependentUpon>wfCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfIngreso.aspx.designer.vb">
+      <DependentUpon>wfIngreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfIngreso.aspx.vb">
+      <DependentUpon>wfIngreso.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="wfPrincipal.aspx.designer.vb">
       <DependentUpon>wfPrincipal.aspx</DependentUpon>
     </Compile>
@@ -166,6 +181,34 @@
       <DependentUpon>wfLogin.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="wfProveedor.aspx.designer.vb">
+      <DependentUpon>wfProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfProveedor.aspx.vb">
+      <DependentUpon>wfProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfRol.aspx.designer.vb">
+      <DependentUpon>wfRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfRol.aspx.vb">
+      <DependentUpon>wfRol.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfUsuario.aspx.designer.vb">
+      <DependentUpon>wfUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfUsuario.aspx.vb">
+      <DependentUpon>wfUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfVenta.aspx.designer.vb">
+      <DependentUpon>wfVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfVenta.aspx.vb">
+      <DependentUpon>wfVenta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -176,22 +219,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.rtl.min.css.map" />
-    <Content Include="Content\bootstrap.rtl.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
-    <Content Include="Content\bootstrap-utilities.min.css.map" />
-    <Content Include="Content\bootstrap-utilities.css.map" />
-    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
-    <Content Include="Content\bootstrap-grid.rtl.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -202,12 +229,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.esm.min.js.map" />
-    <Content Include="Scripts\bootstrap.esm.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -10,6 +10,7 @@ Public Class wfLogin
     Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         txtEmail.Text = ""
         txtClave.Text = ""
+        lblMensaje.Text = ""
     End Sub
 
     Protected Sub btnAcceder_Click(sender As Object, e As EventArgs) Handles btnAcceder.Click

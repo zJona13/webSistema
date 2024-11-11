@@ -1,0 +1,100 @@
+﻿body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: #2e3b4e; /* Color oscuro suave */
+    color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s;
+    position: relative;
+}
+
+.sidebar-logo a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+
+.sidebar-nav {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-item {
+    width: 100%;
+}
+
+.sidebar-link {
+    color: #b0bec5; /* Gris claro para los enlaces */
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.3s, color 0.3s;
+}
+
+    .sidebar-link:hover {
+        color: #ffffff;
+        transform: scale(1.05);
+    }
+
+    .sidebar-link span {
+        margin-left: 10px;
+    }
+
+.sidebar-dropdown {
+    background-color: #3a475e; /* Color ligeramente más oscuro para submenús */
+    display: none;
+}
+
+.sidebar-item:hover .sidebar-dropdown {
+    display: block;
+}
+
+.sidebar-dropdown .sidebar-link {
+    padding-left: 40px;
+    color: #cfd8dc; /* Color más claro para submenús */
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #2e3b4e; /* Mantiene el color del sidebar */
+    border-top: 1px solid #3a475e;
+}
+
+    .sidebar-footer .sidebar-link {
+        color: #b0bec5;
+        text-decoration: none;
+    }
+
+        .sidebar-footer .sidebar-link:hover {
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+.main {
+    flex: 1;
+    background-color: #ffffff;
+}
+
+.content {
+    padding: 20px;
+}

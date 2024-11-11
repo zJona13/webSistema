@@ -1,15 +1,15 @@
 ﻿body {
-    background-color: #e0f7fa;
+    background-color: #3a475e; /* Fondo del body en tono oscuro */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #006064;
+    color: #ffffff; /* Color de texto principal */
 }
 
 .login-container {
     width: 40%;
     padding: 50px;
-    background-color: #ffffff;
+    background-color: #2e3b4e; /* Fondo del login container en tono oscuro */
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 150, 136, 0.3);
+    box-shadow: 0 10px 20px rgba(46, 59, 78, 0.3); /* Sombra con color de fondo */
     text-align: center;
 }
 
@@ -17,62 +17,66 @@
     margin-bottom: 15px;
 }
 
-.logo {
-}
-
 .login-container h3 {
     font-weight: 700;
-    color: #006064;
+    color: #ffffff; /* Color del texto en encabezado */
     margin-bottom: 10px;
 }
 
 .login-container p {
-    color: #4db6ac;
+    color: #ffffff; /* Color de los párrafos dentro del login container */
+}
+
+.text-danger {
+    color: #e57373; /* Rojo más claro para mensajes de error */
 }
 
 .form-control {
-    border: 1px solid #4db6ac;
+    border: 1px solid #b0bec5; /* Borde de los campos de entrada en gris claro */
     border-radius: 10px;
     padding: 10px;
+    background-color: #3a475e; /* Fondo del campo de entrada en tono oscuro */
+    color: #ffffff; /* Texto en blanco dentro del campo */
     transition: border-color 0.3s ease;
 }
 
+    .form-control::placeholder {
+        color: #b0bec5; /* Color de los placeholders en gris claro */
+    }
+
     .form-control:focus {
-        border-color: #00796b;
+        border-color: #ffffff; /* Borde blanco al hacer focus */
         box-shadow: none;
     }
 
 .btn-primary {
     width: 100%;
-    background-color: #00838f;
+    background-color: #007bff; /* Azul más claro para botón de inicio de sesión */
     border: none;
     padding: 10px;
     font-weight: 600;
-    color: #ffffff;
+    color: #ffffff; /* Texto blanco */
     border-radius: 10px;
     transition: background-color 0.3s ease;
-    box-shadow: 0 5px 10px rgba(0, 131, 143, 0.3);
+    box-shadow: 0 5px 10px rgba(0, 123, 255, 0.3); /* Sombra en color azul */
 }
 
     .btn-primary:hover {
-        background-color: #006064;
+        background-color: #0056b3; /* Azul más oscuro en hover */
     }
 
 .btn-outline-secondary {
     width: 100%;
-    border: 1px solid #4db6ac;
+    border: 1px solid #b0bec5; /* Borde del botón secundario en gris claro */
     padding: 12px;
     font-weight: 600;
-    color: #006064;
+    color: #b0bec5; /* Texto gris claro en el botón secundario */
     border-radius: 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: transparent;
 }
 
     .btn-outline-secondary:hover {
-        background-color: #e0f2f1;
-        color: #004d40;
+        background-color: #3a475e; /* Fondo en hover del botón secundario */
+        color: #ffffff; /* Texto blanco al hacer hover */
     }
-
-.text-danger {
-    color: #d32f2f;
-}
