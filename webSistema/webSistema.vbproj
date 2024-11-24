@@ -104,8 +104,10 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\gridview.css" />
     <Content Include="CSS\login.css" />
     <Content Include="CSS\master.css" />
+    <Content Include="CSS\navbar.css" />
     <Content Include="images\final.PNG" />
     <Content Include="images\login.png" />
     <Content Include="wfArticulo.aspx" />

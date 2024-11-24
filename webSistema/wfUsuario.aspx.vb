@@ -1,11 +1,10 @@
 ﻿Imports Sistema
-Imports Sistema.Entidades
 Imports Sistema.Negocio
 
-Public Class wfUsuario
+Public Class wfUsuarioV
     Inherits System.Web.UI.Page
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             Listar()
             CargarRol()
@@ -40,7 +39,8 @@ Public Class wfUsuario
             Dim Neg As New NUsuario()
             Dim id As Integer = Convert.ToInt32(DgvListado.SelectedDataKey.Value)
             Neg.Eliminar(id)
-            Listar() ' Actualizar la lista después de la eliminación
+            Listar()
+            DgvListado.SelectedIndex = -1
         Catch ex As Exception
             ' Manejo de error
         End Try
@@ -51,7 +51,8 @@ Public Class wfUsuario
             Dim Neg As New NUsuario()
             Dim id As Integer = Convert.ToInt32(DgvListado.SelectedDataKey.Value)
             Neg.Activar(id)
-            Listar() ' Actualizar la lista después de activar
+            Listar()
+            DgvListado.SelectedIndex = -1
         Catch ex As Exception
             ' Manejo de error
         End Try
@@ -62,40 +63,59 @@ Public Class wfUsuario
             Dim Neg As New NUsuario()
             Dim id As Integer = Convert.ToInt32(DgvListado.SelectedDataKey.Value)
             Neg.Desactivar(id)
-            Listar() ' Actualizar la lista después de desactivar
+            Listar()
+            DgvListado.SelectedIndex = -1
         Catch ex As Exception
             ' Manejo de error
         End Try
     End Sub
 
-    Protected Sub ConfirmarAccion(sender As Object, e As EventArgs)
-        Dim accion As String = HiddenFieldAccion.Value
-        Dim id As Integer = Convert.ToInt32(DgvListado.SelectedDataKey.Value)
-        Dim Neg As New NUsuario()
-
+    Private Sub LimpiarCampos()
+        TxtId.Text = ""
+        TxtNombre.Text = ""
+        TxtNumDocumento.Text = ""
+        TxtDireccion.Text = ""
+        TxtTelefono.Text = ""
+        TxtEmail.Text = ""
+        TxtClave.Text = ""
+        CboRol.SelectedIndex = 0
+        CboTipoDocumento.SelectedIndex = 0
+        BtnInsertar.Visible = True
+        BtnActualizar.Visible = False
+    End Sub
+    Protected Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
         Try
-            Select Case accion
-                Case "eliminar"
-                    Neg.Eliminar(id)
-                Case "activar"
-                    Neg.Activar(id)
-                Case "desactivar"
-                    Neg.Desactivar(id)
-            End Select
-            Listar() ' Actualiza la lista después de la acción
+            If String.IsNullOrEmpty(TxtNombre.Text) Or String.IsNullOrEmpty(TxtEmail.Text) Or String.IsNullOrEmpty(TxtClave.Text) Then
+                ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Pop", "alert('Por favor, rellene todos los campos obligatorios.');", True)
+                Return
+            End If
+
+            Dim Obj As New Entidades.Usuario
+            Dim Neg As New NUsuario()
+
+            Obj.IdRol = CboRol.SelectedValue
+            Obj.Nombre = TxtNombre.Text
+            Obj.TipoDocumento = CboTipoDocumento.SelectedValue
+            Obj.NumDocumento = TxtNumDocumento.Text
+            Obj.Direccion = TxtDireccion.Text
+            Obj.Telefono = TxtTelefono.Text
+            Obj.Email = TxtEmail.Text
+            Obj.Clave = TxtClave.Text
+
+            If Neg.Insertar(Obj) Then
+                Listar()
+                LimpiarCampos()
+            End If
         Catch ex As Exception
             ' Manejo de error
         End Try
     End Sub
 
     Protected Sub DgvListado_RowEditing(sender As Object, e As GridViewEditEventArgs) Handles DgvListado.RowEditing
-        ' Obtener los valores de la fila seleccionada
         Dim row As GridViewRow = DgvListado.Rows(e.NewEditIndex)
 
-        ' Función para reemplazar '&nbsp;' con una cadena vacía
         Dim obtenerValorLimpio As Func(Of String, String) = Function(valor) If(valor = "&nbsp;", "", valor)
 
-        ' Asignación de valores a los controles del modal, usando la función de limpieza
         TxtId.Text = obtenerValorLimpio(row.Cells(1).Text)
         CboRol.SelectedValue = obtenerValorLimpio(row.Cells(2).Text)
         TxtNombre.Text = obtenerValorLimpio(row.Cells(4).Text)
@@ -105,14 +125,9 @@ Public Class wfUsuario
         TxtTelefono.Text = obtenerValorLimpio(row.Cells(8).Text)
         TxtEmail.Text = obtenerValorLimpio(row.Cells(9).Text)
 
-        ' Cambiar el botón Insertar a Actualizar en el modal
         BtnInsertar.Visible = False
         BtnActualizar.Visible = True
 
-        ' Establecer el valor del campo oculto para abrir el modal
-        hfShowModal.Value = "True"
-
-        ' Cancelar la edición en el GridView para que no intente cambiar de modo
         e.Cancel = True
     End Sub
 
@@ -132,60 +147,25 @@ Public Class wfUsuario
             Obj.Clave = TxtClave.Text
 
             If Neg.Actualizar(Obj) Then
-                Listar() ' Actualizar la lista de usuarios después de actualizar
-                LimpiarCampos() ' Limpiar los campos y preparar el modal para una nueva inserción
+                Listar()
+                LimpiarCampos()
             End If
         Catch ex As Exception
             ' Manejo de error
         End Try
     End Sub
 
-    Private Sub LimpiarCampos()
-        TxtId.Text = ""
-        TxtNombre.Text = ""
-        TxtNumDocumento.Text = ""
-        TxtDireccion.Text = ""
-        TxtTelefono.Text = ""
-        TxtEmail.Text = ""
-        TxtClave.Text = ""
-        CboRol.SelectedIndex = 0
-        CboTipoDocumento.SelectedIndex = 0
-        BtnInsertar.Visible = True
-        BtnActualizar.Visible = False
-    End Sub
-
-    Protected Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
+    Protected Sub DgvListado_PageIndexChanging(sender As Object, e As GridViewPageEventArgs)
         Try
-            ' Validar que los campos obligatorios estén llenos
-            If String.IsNullOrEmpty(TxtNombre.Text) Or String.IsNullOrEmpty(TxtEmail.Text) Or String.IsNullOrEmpty(TxtClave.Text) Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Pop", "alert('Por favor, rellene todos los campos obligatorios.');", True)
-                Return
-            End If
+            ' Establece la nueva página
+            DgvListado.PageIndex = e.NewPageIndex
 
-            Dim Obj As New Entidades.Usuario
-            Dim Neg As New NUsuario()
-
-            ' Asignar los valores de los campos al objeto de usuario
-            Obj.IdRol = CboRol.SelectedValue
-            Obj.Nombre = TxtNombre.Text
-            Obj.TipoDocumento = CboTipoDocumento.SelectedValue
-            Obj.NumDocumento = TxtNumDocumento.Text
-            Obj.Direccion = TxtDireccion.Text
-            Obj.Telefono = TxtTelefono.Text
-            Obj.Email = TxtEmail.Text
-            Obj.Clave = TxtClave.Text
-
-            ' Insertar el usuario en la base de datos
-            If Neg.Insertar(Obj) Then
-                Listar() ' Actualizar la lista de usuarios después de insertar
-                LimpiarCampos() ' Limpiar los campos del modal para una nueva inserción
-            End If
+            ' Vuelve a cargar los datos
+            Listar()
         Catch ex As Exception
             ' Manejo de error
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Error", $"alert('Error al cambiar de página: {ex.Message}');", True)
         End Try
     End Sub
 
-    Protected Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        LimpiarCampos()
-    End Sub
 End Class

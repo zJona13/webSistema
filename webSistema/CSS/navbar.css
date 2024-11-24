@@ -1,0 +1,20 @@
+﻿.navprincipal {
+    width: 100%;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .dropdown-menu {
+    background-color: #2e3b4e;
+}
+
+.navbar .dropdown-item {
+    color: #fff;
+}
+
+    .navbar .dropdown-item:hover {
+        color: white;
+        background-color: #2c2c83;
+    }

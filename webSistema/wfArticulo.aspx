@@ -10,12 +10,6 @@
     <title>ARTICULOS</title>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img src="images/final.PNG" alt="Logo" class="logo" />
-            <h2 id="header-title">Sistema compra y ventas - Web</h2>
-        </div>
-    </header>
     <form id="form1" runat="server">
         <div class="wrapper">
             <%--Sidebar--%>
@@ -168,57 +162,6 @@
              </div>   
         </div>
     </form>
-<footer>
-    <div class="footer-container">
-        <div class="footer-column">
-            <h3>Contacto</h3>
-            <p>Soporte y Ventas</p>
-            <p>605-850 W Hastings St, Vancouver, BC V6C, Canada</p>
-            <p><a href="soportemjegr@mjegr.com">soportemjegr@mjegr.com</a></p>
-        </div>
-        <div class="footer-column">
-            <h4>Categorías</h4>
-            <ul>
-                <li><a href="#">Portátiles</a></li>
-                <li><a href="#">Smartphones</a></li>
-                <li><a href="#">Componentes</a></li>
-                <li><a href="#">Accesorios</a></li>
-                <li><a href="#">Ofertas</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h4>Soporte</h4>
-            <ul>
-                <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
-                <li><a href="#">Política de Garantía</a></li>
-                <li><a href="#">Política de Devoluciones</a></li>
-                <li><a href="#">Centro de Ayuda</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h4>Empresa</h4>
-            <ul>
-                <li><a href="#">Acerca de Nosotros</a></li>
-                <li><a href="#">Términos y Condiciones</a></li>
-                <li><a href="#">Política de Privacidad</a></li>
-                <li><a href="#">Mapa del Sitio</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h4>Síguenos</h4>
-            <div class="social-icons">
-                <a href="#">&#xf099;</a>
-                <a href="#">&#xf09a;</a>
-                <a href="#">&#xf16d;</a>
-                <a href="#">&#xf0d5;</a>
-                <a href="#">&#xf08c;</a>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; SISTEMAS DISTRIBUIDOS 2024 . Diseñado por MJEGR </p>
-    </div>
-</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
     function mostrarConfirmacion(accion) {

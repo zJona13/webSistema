@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class wfUsuario
+Partial Public Class wfUsuarioV
 
     '''<summary>
     '''Control form1.
@@ -21,15 +21,6 @@ Partial Public Class wfUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
-    '''<summary>
-    '''Control BtnClose.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents BtnClose As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control TxtId.
@@ -158,15 +149,6 @@ Partial Public Class wfUsuario
     Protected WithEvents BtnDesactivar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control HiddenFieldAccion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents HiddenFieldAccion As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
     '''Control DgvListado.
     '''</summary>
     '''<remarks>
@@ -174,13 +156,4 @@ Partial Public Class wfUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents DgvListado As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control hfShowModal.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents hfShowModal As Global.System.Web.UI.WebControls.HiddenField
 End Class

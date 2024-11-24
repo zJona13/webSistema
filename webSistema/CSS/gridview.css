@@ -1,0 +1,75 @@
+﻿#DgvListado {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+    #DgvListado th {
+        background-color: #2d3b45;
+        color: #ffffff;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #dee2e6;
+    }
+
+    #DgvListado td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #dee2e6;
+    }
+
+    #DgvListado tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #DgvListado tr:hover {
+        background-color: #d1ecf1;
+    }
+
+    #DgvListado .SelectedRowStyle {
+        background-color: #669999 !important;
+        color: #fff;
+    }
+
+.GridViewPager {
+    text-align: center;
+    padding: 5px 0;
+    background-color: transparent;
+    border: none;
+    font-family: Arial, sans-serif;
+}
+
+    .GridViewPager a {
+        display: inline-block;
+        margin: 0 8px;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ddd;
+        border-radius: 50px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+        .GridViewPager a:hover {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+
+    .GridViewPager span {
+        display: inline-block;
+        margin: 0 8px;
+        padding: 8px 12px;
+        color: #fff;
+        background-color: #007bff;
+        border-radius: 50px;
+        font-size: 14px;
+        border: 1px solid #007bff;
+        font-weight: bold;
+    }
+
+    .GridViewPager a, .GridViewPager span {
+        box-shadow: none;
+    }
