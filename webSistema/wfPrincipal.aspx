@@ -6,6 +6,7 @@
 <head runat="server">
     <link href="/CSS/master.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/79be0d4522.js" crossorigin="anonymous"></script>    
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>MENU PRINCIPAL</title>
 </head>
@@ -26,7 +27,7 @@
                 <ul class="sidebar-nav">
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <i class="lni lni-protection"></i>
+                            <i class="fa-regular fa-user"></i>
                             <span>Acceso</span>
                         </a>
                         <ul class="sidebar-dropdown list-unstyled">
