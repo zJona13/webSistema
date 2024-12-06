@@ -4,83 +4,69 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="/CSS/master.css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="CSS/navbar.css" rel="stylesheet" />
+    <link href="CSS/gridview.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/79be0d4522.js" crossorigin="anonymous"></script>    
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>MENU PRINCIPAL</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="wrapper">
-            <%--Sidebar--%>
-            <aside id="sidebar">
-                <div class="sidebar-logo">
-                    <a href="wfPrincipal.aspx">Sistema de Ventas</a>
+                <%--Navegador Principal--%>
+        <div class="navprincipal">
+            <nav class="navbar navbar-expand-lg" style="background-color: #2e3b4e; color: #fff;">
+                <div class="container-fluid">
+                    <img src="images/final.png" alt="Alternate Text" style="height: 48px; width: 48px;" />
+            
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0 text-center" style="gap: 20px;">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-regular fa-user"></i>&nbsp;Acceso
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="wfUsuario.aspx">Usuarios</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-gear"></i>&nbsp;Mantenimientos
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="wfCategoria.aspx">Categorías</a></li>
+                                    <li><a class="dropdown-item" href="wfArticulo.aspx">Artículos</a></li>
+                                    <li><a class="dropdown-item" href="wfProveedor.aspx">Proveedores</a></li>
+                                    <li><a class="dropdown-item" href="wfCliente.aspx">Clientes</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-cash-register"></i>&nbsp;Transacciones
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="wfIngreso.aspx">Compras</a></li>
+                                    <li><a class="dropdown-item" href="wfVenta.aspx">Ventas</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-list"></i>&nbsp;Reportes
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Reporte 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Reporte 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+            
+                    <a class="nav-link text-white" href="wfLogin.aspx" style="margin-left: auto;"><i class="fa-solid fa-circle-xmark"></i>&nbsp;Salir</a>
                 </div>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="fa-regular fa-user"></i>
-                            <span>Acceso</span>
-                        </a>
-                        <ul class="sidebar-dropdown list-unstyled">
-                            <li class="sidebar-item">
-                                <a href="wfRol.aspx" class="sidebar-link">Roles</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="wfUsuario.aspx" class="sidebar-link">Usuarios</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="lni lni-protection"></i>
-                            <span>Mantenimientos</span>
-                        </a>
-                        <ul class="sidebar-dropdown list-unstyled">
-                            <li class="sidebar-item">
-                                <a href="wfCategoria.aspx" class="sidebar-link">Categorías</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="wfArticulo.aspx" class="sidebar-link">Artículos</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="wfProveedor.aspx" class="sidebar-link">Proveedores</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="wfCliente.aspx" class="sidebar-link">Clientes</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="lni lni-protection"></i>
-                            <span>Transacciones</span>
-                        </a>
-                        <ul class="sidebar-dropdown list-unstyled">
-                            <li class="sidebar-item">
-                                <a href="wfIngreso.aspx" class="sidebar-link">Compras</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="wfVenta.aspx" class="sidebar-link">Ventas</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="sidebar-footer">
-                    <a href="wfLogin.aspx" class="sidebar-link">
-                        <i class="lni lni-exit"></i>
-                        <span>Salir</span>
-                    </a>
-                </div>
-            </aside>
-            <%--Información--%>
-             <div class="content" style="height: 0px;">
-                 <div class="container-fluid">
-                    
-                 </div>
-             </div>   
+            </nav>
+            <div class="text-center mt-4">
+                <p style="font-size:40px;"><strong>DASHBOARD</strong></p>
+            </div>
         </div>
     </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

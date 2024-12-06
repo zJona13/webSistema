@@ -4,172 +4,150 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="/CSS/master.css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="CSS/navbar.css" rel="stylesheet" />
+    <link href="CSS/gridview.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://kit.fontawesome.com/79be0d4522.js" crossorigin="anonymous"></script>   
     <title>COMPRAS</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="wrapper">
-            <%--Sidebar--%>
-            <aside id="sidebar">
-                <div class="sidebar-logo">
-                    <a href="wfPrincipal.aspx">Sistema de Ventas</a>
-                </div>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="lni lni-protection"></i>
-                            <span>Acceso</span>
-                        </a>
-                        <ul class="sidebar-dropdown list-unstyled">
-                            <li class="sidebar-item">
-                                <a href="wfRol.aspx" class="sidebar-link">Roles</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="wfUsuario.aspx" class="sidebar-link">Usuarios</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="lni lni-protection"></i>
-                            <span>Mantenimientos</span>
-                        </a>
-                        <ul class="sidebar-dropdown list-unstyled">
-                            <li class="sidebar-item">
-                                <a href="wfCategoria.aspx" class="sidebar-link">Categorías</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="wfArticulo.aspx" class="sidebar-link">Artículos</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="wfProveedor.aspx" class="sidebar-link">Proveedores</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="wfCliente.aspx" class="sidebar-link">Clientes</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="lni lni-protection"></i>
-                            <span>Transacciones</span>
-                        </a>
-                        <ul class="sidebar-dropdown list-unstyled">
-                            <li class="sidebar-item">
-                                <a href="wfIngreso.aspx" class="sidebar-link">Compras</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="wfVenta.aspx" class="sidebar-link">Ventas</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="sidebar-footer">
-                    <a href="wfLogin.aspx" class="sidebar-link">
-                        <i class="lni lni-exit"></i>
-                        <span>Salir</span>
-                    </a>
-                </div>
-            </aside>
-            <%--Información--%>
-             <div class="content" style="height: 0px;">
+        <%--Navegador Principal--%>
+        <div class="navprincipal">
+            <nav class="navbar navbar-expand-lg" style="background-color: #2e3b4e; color: #fff;">
                 <div class="container-fluid">
-                    <div>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                         Agregar
-                        </button>
+                    <img src="images/final.png" alt="Alternate Text" style="height: 48px; width: 48px;" />
+            
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0 text-center" style="gap: 20px;">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-regular fa-user"></i>&nbsp;Acceso
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="wfUsuario.aspx">Usuarios</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-gear"></i>&nbsp;Mantenimientos
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="wfCategoria.aspx">Categorías</a></li>
+                                    <li><a class="dropdown-item" href="wfArticulo.aspx">Artículos</a></li>
+                                    <li><a class="dropdown-item" href="wfProveedor.aspx">Proveedores</a></li>
+                                    <li><a class="dropdown-item" href="wfCliente.aspx">Clientes</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-cash-register"></i>&nbsp;Transacciones
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="wfIngreso.aspx">Compras</a></li>
+                                    <li><a class="dropdown-item" href="wfVenta.aspx">Ventas</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-list"></i>&nbsp;Reportes
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Reporte 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Reporte 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+            
+                    <a class="nav-link text-white" href="wfLogin.aspx" style="margin-left: auto;"><i class="fa-solid fa-circle-xmark"></i>&nbsp;Salir</a>
+                </div>
+            </nav>
+        </div>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" style="max-width:40%">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Compras</h1>
-                                        <asp:Button type="BtnClose" runat="server" CssClass="btn-close" data-bs-dismiss="modal" aria-label="Close" Text="" ID="BtnClose" />
-                                    </div>
-                                    <div class="modal-body">
+        <div class="text-center mt-4">
+            <p style="font-size:40px;"><strong>COMPRAS</strong></p>
+        </div>
 
-                                        <div class="form-group" id="id">
-                                            <asp:TextBox ID="TxtId" runat="server" CssClass="form-control" Visible="False"></asp:TextBox>
-                                        </div>
+        <%--Listado y Funciones--%>
+        <div class="ps-4 pe-4 mt-3">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="formulario p-3 rounded" style="background-color: #f9f9f9; border: 1px solid #ddd;">
+                        <div class="form-group" id="id">
+                            <asp:TextBox ID="TxtId" runat="server" CssClass="form-control" Visible="False"></asp:TextBox>
+                        </div>
 
-                                        <div class="form-group">
-                                            <label>Cabecera</label>
-                                            <div class="form-group" id="proveedor">
-                                                <label for="txtProveedor">Proveedor (*)</label>
-                                                <asp:TextBox ID="TxtIdProveedor" runat="server" CssClass="form-control"></asp:TextBox>
-                                                <asp:TextBox ID="TxtNombreProveedor" runat="server" CssClass="form-control"></asp:TextBox>
-                                                <asp:Button ID="BtnBuscarProveedor" runat="server" CssClass="btn btn-secondary" Text="..." />
-                                            </div>
-                                            <div class="form-group" id="comprobante">
-                                                <label for="txtComprobante">Comprobante</label>
-                                                <asp:DropDownList ID="CboTipoComprobante" runat="server" CssClass="form-control">
-                                                    <asp:ListItem Text="Factura" Value="FACTURA"></asp:ListItem>
-                                                    <asp:ListItem Text="Boleta" Value="BOLETA"></asp:ListItem>
-                                                    <asp:ListItem Text="Ticket" Value="TICKET"></asp:ListItem>
-                                                </asp:DropDownList>    
-                                                <asp:TextBox ID="TxtSerieComprobante" runat="server" CssClass="form-control"></asp:TextBox>
-                                                <asp:TextBox ID="TxtNumComprobante" runat="server" CssClass="form-control"></asp:TextBox>
-                                            </div>
-                                            <div class="form-group" id="impuesto">
-                                                <label for="txtImpuesto">Impuesto</label>
-                                                <asp:TextBox ID="TxtImpuesto" runat="server" CssClass="form-control" Text="0.18"></asp:TextBox>
-                                            </div>
-                                        </div>
+                        <div class="form-group">
+                            <label>Cabecera</label>
+                            <div class="form-group" id="proveedor">
+                                <label for="txtProveedor">Proveedor (*)</label>
+                                <asp:TextBox ID="TxtIdProveedor" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="TxtNombreProveedor" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:Button ID="BtnBuscarProveedor" runat="server" CssClass="btn btn-secondary" Text="..." />
+                            </div>
+                            <div class="form-group" id="comprobante">
+                                <label for="txtComprobante">Comprobante</label>
+                                <asp:DropDownList ID="CboTipoComprobante" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="Factura" Value="FACTURA"></asp:ListItem>
+                                    <asp:ListItem Text="Boleta" Value="BOLETA"></asp:ListItem>
+                                    <asp:ListItem Text="Ticket" Value="TICKET"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:TextBox ID="TxtSerieComprobante" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="TxtNumComprobante" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="form-group" id="impuesto">
+                                <label for="txtImpuesto">Impuesto</label>
+                                <asp:TextBox ID="TxtImpuesto" runat="server" CssClass="form-control" Text="0.18"></asp:TextBox>
+                            </div>
+                        </div>
 
-                                        <div class="form-group">
-                                            <label>Detalles</label>
-                                            <div class="form-group" id="codigoarticulo">
-                                                <label for="txtCodArticulo">Código Artículo</label>
-                                                <asp:TextBox ID="TxtCodigo" runat="server" CssClass="form-control"></asp:TextBox>
-                                                <asp:Button ID="BtnBuscarArticulos" runat="server" CssClass="btn btn-secondary" Text="Buscar" />
-                                            </div>
-                                            <div class="form-group" id="detalle">
-                                                <asp:GridView ID="DgvDetalle" runat="server">
-                                                </asp:GridView>
-                                                <div class="form-group" id="detallearticulo">
-                                                    <label for="txtSubTotal">Sub Total</label>
-                                                    <asp:TextBox ID="TxtSubTotal" runat="server" CssClass="form-control"></asp:TextBox>
-                                                    <label for="txtImpuestoTotal">Total Impuesto</label>
-                                                    <asp:TextBox ID="TxtTotalImpuesto" runat="server" CssClass="form-control"></asp:TextBox>
-                                                    <label for="txtTotal">Total</label>
-                                                    <asp:TextBox ID="TxtTotal" runat="server" CssClass="form-control"></asp:TextBox>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <asp:Button ID="BtnInsertar" runat="server" CssClass="btn btn-primary" Text="Insertar" />
-                                        <asp:Button ID="BtnCancelar" runat="server" CssClass="btn btn-secondary" Text="Cancelar" data-bs-dismiss="modal" />
-                                    </div>
+                        <div class="form-group">
+                            <label>Detalles</label>
+                            <div class="form-group" id="codigoarticulo">
+                                <label for="txtCodArticulo">Código Artículo</label>
+                                <asp:TextBox ID="TxtCodigo" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:Button ID="BtnBuscarArticulos" runat="server" CssClass="btn btn-secondary" Text="Buscar" />
+                            </div>
+                            <div class="form-group" id="detalle">
+                                <asp:GridView ID="DgvDetalle" runat="server">
+                                </asp:GridView>
+                                <div class="form-group" id="detallearticulo">
+                                    <label for="txtSubTotal">Sub Total</label>
+                                    <asp:TextBox ID="TxtSubTotal" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <label for="txtImpuestoTotal">Total Impuesto</label>
+                                    <asp:TextBox ID="TxtTotalImpuesto" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <label for="txtTotal">Total</label>
+                                    <asp:TextBox ID="TxtTotal" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div>
-                        <asp:Button ID="BtnAnular" runat="server" Text="Anular" CssClass="btn btn-danger" OnClientClick="mostrarConfirmacion('anular'); return false;"/>
-                        
-                        <asp:HiddenField ID="HiddenFieldAccion" runat="server" />
+                    <!-- Botones debajo del formulario -->
+                    <div class="botones mt-3">
+                        <asp:Button ID="BtnInsertar" runat="server" CssClass="btn btn-primary me-2" Text="Insertar" />
+                        <asp:Button ID="BtnCancelar" runat="server" CssClass="btn btn-secondary me-2" Text="Cancelar" />
+                        <asp:Button ID="BtnAnular" runat="server" Text="Anular" CssClass="btn btn-danger me-2" />
                     </div>
+                </div>
 
+                <div class="col-lg-8 col-md-12">
                     <div class="row">
                         <div class="col-md-8">
-                            <asp:GridView ID="DgvListado" runat="server" AutoGenerateSelectButton="True" DataKeyNames="ID"
+                            <div class="listado" style="overflow-x: auto; max-width: 100%;">
+                                <asp:GridView ID="DgvListado" runat="server" AllowPaging="true" PageSize="6"
+                                    PagerStyle-CssClass="GridViewPager"
+                                    OnPageIndexChanging="DgvListado_PageIndexChanging"
+                                    OnSelectedIndexChanged="DgvListado_SelectedIndexChanged"
+                                    AutoGenerateSelectButton="true" DataKeyNames="ID"
                                     AlternatingRowStyle-BackColor="White"
                                     SelectedRowStyle-BackColor="#669999"
-                                    SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="DgvListado_SelectedIndexChanged">
-                                    <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
-                                <SelectedRowStyle BackColor="#669999" ForeColor="White"></SelectedRowStyle>
-                            </asp:GridView>
-                            <asp:HiddenField ID="hfShowModal" runat="server" Value="False" />
+                                    SelectedRowStyle-ForeColor="White">
+                                </asp:GridView>
+                            </div>
                         </div>
-
                         <div class="col-md-4">
                             <asp:Panel ID="PanelMostrarDetalle" runat="server" Visible="False" CssClass="p-3">
                                 <div class="form-group">
@@ -197,27 +175,10 @@
                             </asp:Panel>
                         </div>
                     </div>
-                 </div>
-             </div>   
+                </div>
+            </div>
         </div>
     </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script>
-    function mostrarConfirmacion(accion) {
-        document.getElementById("actionText").innerText = accion;
-        document.getElementById("<%= HiddenFieldAccion.ClientID %>").value = accion;
-        var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-        confirmationModal.show();
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        var showModal = document.getElementById('<%= hfShowModal.ClientID %>').value;
-        if (showModal === "True") {
-            var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-            exampleModal.show();
-            document.getElementById('<%= hfShowModal.ClientID %>').value = "False";
-        }
-    });
-</script>
 </body>
 </html>

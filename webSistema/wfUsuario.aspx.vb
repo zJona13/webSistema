@@ -1,7 +1,7 @@
 ﻿Imports Sistema
 Imports Sistema.Negocio
 
-Public Class wfUsuarioV
+Public Class wfUsuario
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -167,5 +167,4 @@ Public Class wfUsuarioV
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Error", $"alert('Error al cambiar de página: {ex.Message}');", True)
         End Try
     End Sub
-
 End Class

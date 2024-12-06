@@ -23,15 +23,6 @@ Partial Public Class wfProveedor
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''Control BtnClose.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents BtnClose As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''Control TxtId.
     '''</summary>
     '''<remarks>
@@ -113,15 +104,6 @@ Partial Public Class wfProveedor
     Protected WithEvents BtnActualizar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control BtnCancelar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents BtnCancelar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''Control BtnEliminar.
     '''</summary>
     '''<remarks>
@@ -131,15 +113,6 @@ Partial Public Class wfProveedor
     Protected WithEvents BtnEliminar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control HiddenFieldAccion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents HiddenFieldAccion As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
     '''Control DgvListado.
     '''</summary>
     '''<remarks>
@@ -147,13 +120,4 @@ Partial Public Class wfProveedor
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents DgvListado As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control hfShowModal.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents hfShowModal As Global.System.Web.UI.WebControls.HiddenField
 End Class

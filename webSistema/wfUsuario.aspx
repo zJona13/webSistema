@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="wfUsuario.aspx.vb" Inherits="webSistema.wfUsuarioV" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="wfUsuario.aspx.vb" Inherits="webSistema.wfUsuario" %>
 
 <!DOCTYPE html>
 
@@ -26,7 +26,6 @@
                                     <i class="fa-regular fa-user"></i>&nbsp;Acceso
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="wfRol.aspx">Roles</a></li>
                                     <li><a class="dropdown-item" href="wfUsuario.aspx">Usuarios</a></li>
                                 </ul>
                             </li>
@@ -71,6 +70,7 @@
             <p style="font-size:40px;"><strong>USUARIOS</strong></p>
         </div>
 
+        <%--Listado y Funciones--%>
         <div class="ps-4 pe-4 mt-3">
             <div class="row">
                 <div class="col-lg-4 col-md-12">

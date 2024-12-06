@@ -1,5 +1,5 @@
-﻿Imports Sistema.Negocio
-Imports Sistema.Entidades
+﻿Imports Sistema.Entidades
+Imports Sistema.Negocio
 
 Public Class wfProveedor
     Inherits System.Web.UI.Page
@@ -23,7 +23,6 @@ Public Class wfProveedor
 
     Protected Sub BtnInsertar_Click(sender As Object, e As EventArgs) Handles BtnInsertar.Click
         Try
-            ' Validar que los campos obligatorios estén llenos
             If String.IsNullOrEmpty(TxtNombre.Text) Then
                 ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Pop", "alert('Por favor, rellene todos los campos obligatorios.');", True)
                 Return
@@ -41,8 +40,8 @@ Public Class wfProveedor
             Obj.Email = TxtEmail.Text
 
             If Neg.Insertar(Obj) Then
-                Listar() ' Actualizar la lista de proveedores después de insertar
-                LimpiarCampos() ' Limpiar los campos del modal para una nueva inserción
+                Listar()
+                LimpiarCampos()
             End If
         Catch ex As Exception
             ' Manejo de error
@@ -51,7 +50,6 @@ Public Class wfProveedor
 
     Protected Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
         Try
-            ' Validar que los campos obligatorios estén llenos
             If String.IsNullOrEmpty(TxtNombre.Text) OrElse String.IsNullOrEmpty(TxtId.Text) Then
                 ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Pop", "alert('Por favor, rellene todos los campos obligatorios.');", True)
                 Return
@@ -70,8 +68,8 @@ Public Class wfProveedor
             Obj.Email = TxtEmail.Text
 
             If Neg.Actualizar(Obj) Then
-                Listar() ' Actualizar la lista de proveedores después de actualizar
-                LimpiarCampos() ' Limpiar los campos y preparar el modal para una nueva inserción
+                Listar()
+                LimpiarCampos()
             End If
         Catch ex As Exception
             ' Manejo de error
@@ -83,7 +81,8 @@ Public Class wfProveedor
             Dim Neg As New NPersona()
             Dim id As Integer = Convert.ToInt32(DgvListado.SelectedDataKey.Value)
             Neg.Eliminar(id)
-            Listar() ' Actualizar la lista después de la eliminación
+            Listar()
+            DgvListado.SelectedIndex = -1
         Catch ex As Exception
             ' Manejo de error
         End Try
@@ -102,13 +101,10 @@ Public Class wfProveedor
     End Sub
 
     Protected Sub DgvListado_RowEditing(sender As Object, e As GridViewEditEventArgs) Handles DgvListado.RowEditing
-        ' Obtener los valores de la fila seleccionada
         Dim row As GridViewRow = DgvListado.Rows(e.NewEditIndex)
 
-        ' Función para reemplazar '&nbsp;' con una cadena vacía
         Dim obtenerValorLimpio As Func(Of String, String) = Function(valor) If(valor = "&nbsp;", "", valor)
 
-        ' Asignación de valores a los controles del modal
         TxtId.Text = obtenerValorLimpio(row.Cells(1).Text)
         TxtNombre.Text = obtenerValorLimpio(row.Cells(3).Text)
         CboTipoDocumento.SelectedValue = obtenerValorLimpio(row.Cells(4).Text)
@@ -117,18 +113,22 @@ Public Class wfProveedor
         TxtTelefono.Text = obtenerValorLimpio(row.Cells(7).Text)
         TxtEmail.Text = obtenerValorLimpio(row.Cells(8).Text)
 
-        ' Cambiar el botón Insertar a Actualizar en el modal
         BtnInsertar.Visible = False
         BtnActualizar.Visible = True
 
-        ' Establecer el valor del campo oculto para abrir el modal
-        hfShowModal.Value = "True"
-
-        ' Cancelar la edición en el GridView para que no intente cambiar de modo
         e.Cancel = True
     End Sub
 
-    Protected Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        LimpiarCampos()
+    Protected Sub DgvListado_PageIndexChanging(sender As Object, e As GridViewPageEventArgs)
+        Try
+            ' Establece la nueva página
+            DgvListado.PageIndex = e.NewPageIndex
+
+            ' Vuelve a cargar los datos
+            Listar()
+        Catch ex As Exception
+            ' Manejo de error
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "Error", $"alert('Error al cambiar de página: {ex.Message}');", True)
+        End Try
     End Sub
 End Class

@@ -106,9 +106,7 @@
   <ItemGroup>
     <Content Include="CSS\gridview.css" />
     <Content Include="CSS\login.css" />
-    <Content Include="CSS\master.css" />
     <Content Include="CSS\navbar.css" />
-    <Content Include="images\final.PNG" />
     <Content Include="images\login.png" />
     <Content Include="wfArticulo.aspx" />
     <Content Include="wfCategoria.aspx" />
@@ -118,7 +116,6 @@
     <Content Include="Web.config" />
     <Content Include="wfLogin.aspx" />
     <Content Include="wfProveedor.aspx" />
-    <Content Include="wfRol.aspx" />
     <Content Include="wfUsuario.aspx" />
     <Content Include="wfVenta.aspx" />
   </ItemGroup>
@@ -189,13 +186,6 @@
     </Compile>
     <Compile Include="wfProveedor.aspx.vb">
       <DependentUpon>wfProveedor.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="wfRol.aspx.designer.vb">
-      <DependentUpon>wfRol.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="wfRol.aspx.vb">
-      <DependentUpon>wfRol.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="wfUsuario.aspx.designer.vb">
